@@ -76,7 +76,7 @@ if (form) {
   // Rascunho (só os textos; as imagens não são guardadas).
   const DRAFT = 'estante:draft';
   const TEXTS = ['desfoque', 'pelicula', 'grao', 'tam_capa', 'borda', 'cor_borda', 'cor_fundo', 'cor_destaque','status', 'titulo', 'autor', 'unidade', 'atual', 'total', 'nota', 'e_titulo', 'e_sub', 'q_texto', 'q_autor', 'q_obra', 'arroba'];
-  const RADIOS = ['modo', 'formato', 'tema', 'e_recorte', 'fundo_tipo', 'alinhar', 'borda_cor'];
+  const RADIOS = ['modo', 'formato', 'tema', 'e_proporcao', 'e_recorte', 'fundo_tipo', 'alinhar', 'borda_cor'];
   const CHECKS = { e_rank: false, assinatura: true, sombra: true, inclinar: false };
   function loadDraft() {
     const d = store.get(DRAFT, null);
@@ -384,6 +384,16 @@ if (form) {
     return `${d.label}: ${d.titulo || 'sem título'}${d.autor ? `, de ${d.autor}` : ''}`;
   }
 
+  // Proporção das células da estante: 2:3 (livro, jogo, filme) ou 1:1 (capa de disco).
+  // Automática: quadrada quando pelo menos metade das capas é quase quadrada.
+  const isSquare = (img) => { const r = img.width / img.height; return r >= 0.85 && r <= 1.18; };
+  function cellRatio(list) {
+    const p = radioValue('e_proporcao', form);
+    if (p === 'quadrada') return 1;
+    if (p === 'retrato' || !list.length) return 1.5;
+    return list.filter((it) => isSquare(it.img)).length * 2 >= list.length ? 1 : 1.5;
+  }
+
   // Estante: no centro, só cabeçalho e rodapé mudam; a grade é sempre a mesma (regra 5).
   function drawEstante(f, t) {
     const { H, P, top, bottom } = f;
@@ -407,8 +417,9 @@ if (form) {
     const cols = n === 1 ? 1 : n <= 4 ? 2 : 3;
     const rows = Math.ceil(n / cols);
     const gap = feed ? 24 : 30;
-    const cellW = Math.min((areaW - gap * (cols - 1)) / cols, ((areaH - gap * (rows - 1)) / rows) * (2 / 3));
-    const cellH = cellW * 1.5;
+    const ratio = cellRatio(list); // altura / largura da célula
+    const cellW = Math.min((areaW - gap * (cols - 1)) / cols, ((areaH - gap * (rows - 1)) / rows) / ratio);
+    const cellH = cellW * ratio;
     const fr = border(Math.max(5, Math.round(cellW * 0.035)));
     const gridW = cols * cellW + (cols - 1) * gap, gridH = rows * cellH + (rows - 1) * gap;
     const gx = (W - gridW) / 2, gy = y + (areaH - gridH) / 2;

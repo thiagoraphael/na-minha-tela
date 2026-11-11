@@ -45,6 +45,7 @@ export default function view() {
         <ul class="thumbs" data-thumbs aria-label="Capas da estante"></ul>
         ${Field({ label: 'Título', name: 'e_titulo', placeholder: 'Ex.: Outubro', maxlength: 40 })}
         ${Field({ label: 'Linha de cima', name: 'e_sub', placeholder: 'Ex.: O que li, joguei e assisti', maxlength: 40 })}
+        ${Seg({ name: 'e_proporcao', legend: 'Proporção', options: [{ value: 'auto', label: 'Automática' }, { value: 'retrato', label: 'Retrato' }, { value: 'quadrada', label: 'Quadrada (música)' }] })}
         ${Seg({ name: 'e_recorte', legend: 'Capas', options: [{ value: 'cortar', label: 'Mesmo tamanho' }, { value: 'inteira', label: 'Inteiras' }] })}
         ${Check({ label: 'Numerar como ranking', name: 'e_rank' })}
       </div>
