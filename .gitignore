@@ -1,0 +1,6 @@
+dist/
+node_modules/
+.vercel
+.DS_Store
+# código de origem da Estante (repo meu-site), só para consulta
+docs/meu-site/

@@ -1,0 +1,60 @@
+/* Tokens do Na Minha Tela (spec, seção 5). Os nomes semânticos de baixo são os que
+   a base dos apps (src/shared/shared.css, vinda do meu-site) espera. */
+:root {
+  /* Paleta */
+  --noite: #0E0F1A;
+  --tela: #171A2B;
+  --papel: #F3F1EA;
+  --sinal: #FFD23F;
+  --coral: #FF5C39;
+  --azul: #3B4BFF;
+
+  /* Papéis */
+  --bg-page: var(--noite);
+  --surface-raised: var(--tela);
+  --text-on-dark: var(--papel);
+  --text-muted: rgb(243 241 234 / 0.62);
+  --text-accent: var(--sinal);
+  --line: rgb(243 241 234 / 0.24);
+  --focus-ring: var(--sinal);
+  --focus-width: 3px;
+  --focus-offset: 3px;
+
+  /* Tipografia */
+  --font-body: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --weight-body: 400;
+  --weight-mono: 500;
+  --weight-title: 800;
+  --type-h1: clamp(2.25rem, 5vw + 0.5rem, 3.75rem);
+  --type-body: 1rem;
+  --type-button: 1rem;
+  --type-label: 0.875rem;
+  --type-caption: 0.8125rem;
+  --leading-body: 1.5;
+  --tracking-caps: 0.08em;
+
+  /* Forma: tudo arredondado */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 28px;
+  --radius-pill: 999px;
+  --radius-circle: 50%;
+  --border-width: 2px;
+
+  /* Espaço */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Movimento */
+  --dur-fast: 140ms;
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
