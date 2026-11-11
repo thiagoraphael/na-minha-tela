@@ -26,7 +26,8 @@ export default function view() {
         ${Drop({ name: 'capa', title: 'Escolher capa' })}
         ${Field({ label: 'Status', name: 'status', type: 'select', value: 'lendo', options: [
           { value: 'lendo', label: 'Tô lendo' }, { value: 'jogando', label: 'Tô jogando' },
-          { value: 'assistindo', label: 'Tô assistindo' }, { value: 'terminei', label: 'Terminei' }] })}
+          { value: 'assistindo', label: 'Tô assistindo' }, { value: 'ouvindo', label: 'Tô ouvindo' },
+          { value: 'terminei', label: 'Terminei' }] })}
         ${Field({ label: 'Título', name: 'titulo', placeholder: 'Ex.: Duna', maxlength: 80 })}
         ${Field({ label: 'Autor, estúdio ou criador', name: 'autor', placeholder: 'Ex.: Frank Herbert', maxlength: 60 })}
         ${Field({ label: 'Progresso', name: 'unidade', type: 'select', value: 'paginas', options: [

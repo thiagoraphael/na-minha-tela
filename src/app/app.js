@@ -17,7 +17,7 @@ if (form) {
   const MAX_CAPAS = 9; // regra 3
   const SITE = CONFIG.dominio || '';
 
-  const STATUS = { lendo: 'TÔ LENDO', jogando: 'TÔ JOGANDO', assistindo: 'TÔ ASSISTINDO', terminei: 'TERMINEI' };
+  const STATUS = { lendo: 'TÔ LENDO', jogando: 'TÔ JOGANDO', assistindo: 'TÔ ASSISTINDO', ouvindo: 'TÔ OUVINDO', terminei: 'TERMINEI' };
 
   // Temas: fundo, texto, selo, barra (accent), estrelas, trilho da barra, palavra destacada e espaço vazio.
   const THEMES = {

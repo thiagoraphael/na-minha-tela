@@ -103,7 +103,7 @@ Escolher arquivo, arrastar e soltar, ou colar com Ctrl+V.
 
 ### 6.4 Campos do modo Capa
 
-Status (Tô lendo, Tô jogando, Tô assistindo, Terminei), título, autor/estúdio/criador, página atual e total (gera a porcentagem e a barra de progresso), nota.
+Status (Tô lendo, Tô jogando, Tô assistindo, Tô ouvindo, Terminei), título, autor/estúdio/criador, página atual e total (gera a porcentagem e a barra de progresso), nota.
 
 ### 6.5 Aparência
 
